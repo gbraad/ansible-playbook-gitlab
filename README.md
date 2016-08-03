@@ -14,6 +14,7 @@ Usage
 On the deployment node
 ```
 $ yum install -y ansible
+$ ansible-galaxy install -r roles.txt
 $ vi hosts
 $ ansible-playbook -i hosts deploy_gitlab.yml
 ```
@@ -27,6 +28,15 @@ On the runners
 ```
 sudo gitlab-ci-multi-runner register
 ```
+
+
+Used roles
+----------
+
+  * gbraad.gitlab-server  
+    [Galaxy](https://galaxy.ansible.com/gbraad/gitlab-server/), [GitHub](https://github.com/gbraad/ansible-role-gitlab-server)
+  * gbraad.gitlab-cirunner  
+    [Galaxy](https://galaxy.ansible.com/gbraad/gitlab-cirunner/), [GitHub](https://github.com/gbraad/ansible-role-gitlab-cirunner)
 
 
 Authors
