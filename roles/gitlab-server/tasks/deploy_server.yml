@@ -1,0 +1,40 @@
+---
+  - name: Install list of required packages
+    package: name={{ item }} state=installed
+    become: yes
+    become_method: sudo
+    with_items:
+    - curl
+    - policycoreutils
+    - postfix
+  
+  # - name: Allow HTTP
+  #   command: firewall-cmd --permanent --add-service=http
+  #   notify: restart firewall
+  
+  - name: Enable services
+    service:
+      name: "{{ item }}"
+      state: started
+      enabled: yes
+    with_items:
+      - postfix
+  
+  - name: Add GitLab repository
+    yum_repository:
+      name: gitlab_gitlab-ce
+      description: GitLab CE
+      file: gitlab_gitlab-ce
+      baseurl: https://packages.gitlab.com/gitlab/gitlab-ce/el/7/$basearch
+      gpgcheck: no
+  
+  - name: Add GitLab source repository
+    yum_repository:
+      name: gitlab_gitlab-ce-source
+      description: GitLab CE source
+      file: gitlab_gitlab-ce
+      baseurl: https://packages.gitlab.com/gitlab/gitlab-ce/el/7/SRPMS
+      gpgcheck: no
+  
+  - name: Install GitLab
+    package: name=gitlab-ce state=installed

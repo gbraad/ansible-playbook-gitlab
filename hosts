@@ -1,0 +1,5 @@
+[gitlab-servers]
+server-01 ansible_ssh_host=192.168.1.1
+
+[gitlab-runners]
+runner-01 ansible_ssh_host=192.168.1.2

@@ -1,0 +1,14 @@
+---
+- name: Deploy GitLab servers
+  hosts: gitlab-servers
+  remote_user: root
+  become: true
+  roles:
+  - gitlab-server
+
+- name: Deploy GitLab runners
+  hosts: gitlab-runners
+  remote_user: root
+  become: true
+  roles:
+  - gitlab-runner
