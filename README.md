@@ -19,10 +19,8 @@ $ vi hosts
 $ ansible-playbook -i hosts deploy_gitlab.yml
 ```
 
-On the server
-```
-sudo gitlab-ctl reconfigure
-```
+After this you can access the GitLab servers' web interface.
+
 
 On the runners
 ```
