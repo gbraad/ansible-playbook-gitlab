@@ -64,9 +64,9 @@ Used roles
 ----------
 
   * gbraad.gitlab-server  
-    [Galaxy](https://galaxy.ansible.com/gbraad/gitlab-server/), [GitHub](https://github.com/gbraad/ansible-role-gitlab-server)
+    [Galaxy](https://galaxy.ansible.com/gbraad/gitlab-server/), [GitHub](https://github.com/gbraad/ansible-role-gitlab-server) / [GitLab](https://gitlab.com/gbraad/ansible-role-gitlab-server)
   * gbraad.gitlab-cirunner  
-    [Galaxy](https://galaxy.ansible.com/gbraad/gitlab-cirunner/), [GitHub](https://github.com/gbraad/ansible-role-gitlab-cirunner)
+    [Galaxy](https://galaxy.ansible.com/gbraad/gitlab-cirunner/), [GitHub](https://github.com/gbraad/ansible-role-gitlab-cirunner) / [GitLab](https://gitlab.com/gbraad/ansible-role-gitlab-cirunner)
 
 
 Authors
