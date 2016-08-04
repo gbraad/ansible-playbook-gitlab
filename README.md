@@ -8,10 +8,19 @@ Deploy GitLab server and CI runners using Ansible. At the moment it does not
 configure the server and register runners automatically.
 
 
+Prerequisite
+------------
+
+Make sure you can perform a password-less login to the servers you want to configure. Also, it is
+advised to assign the servers a resolvable hostname, as the configure step of GitLab will use the
+hostname as the login URL.
+
+
 Usage
 -----
 
-On the deployment node
+### On the deployment node
+
 ```
 $ yum install -y ansible
 $ ansible-galaxy install -r roles.txt
@@ -22,10 +31,13 @@ $ ansible-playbook -i hosts deploy_gitlab.yml
 After this you can access the GitLab servers' web interface.
 
 
-On the runners
+### On the runners
+
 ```
 sudo gitlab-ci-multi-runner register
 ```
+
+The token to register the runners, can be found at: `http://[server hostname]/admin/runners`
 
 
 Used roles
