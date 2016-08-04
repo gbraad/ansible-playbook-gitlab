@@ -37,7 +37,27 @@ After this you can access the GitLab servers' web interface.
 sudo gitlab-ci-multi-runner register
 ```
 
-The token to register the runners, can be found at: `http://[server hostname]/admin/runners`
+The token to register the runners can be found at: `http://[server hostname]/admin/runners`
+
+```
+[root@gitlab-runner ~]# gitlab-ci-multi-runner register -u http://gitlab-server/ci -r DSame-i74XHyY13kHvgk 
+Running in system-mode.                            
+
+Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com/ci):
+[http://gitlab-server/ci]: 
+Please enter the gitlab-ci token for this runner:
+[DSame-i74XHyY13kHvgk]: 
+Please enter the gitlab-ci description for this runner:
+[gitlab-runner.novalocal]: 
+Please enter the gitlab-ci tags for this runner (comma separated):
+
+Registering runner... succeeded                     runner=DSame-i7
+Please enter the executor: docker+machine, docker-ssh+machine, docker, docker-ssh, parallels, shell, ssh, virtualbox:
+docker
+Please enter the default Docker image (eg. ruby:2.1):
+centos:7
+Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
+```
 
 
 Used roles
